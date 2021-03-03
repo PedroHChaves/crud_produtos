@@ -5,7 +5,7 @@
 # Funcionamento
  A aplicação possui cinco possíveis rotas, ("/", "/insert", "/list", "/delete/:id", "/update/:id").
 
- A primeira rota ("/", serve como teste para verificar se o servidor está rodando). Enquanto a segunda ("/insert") serve para inserir os dados no banco, informações essas passadar por um meio de um JSON enviado pelo frontend. A terceira rota ("/List"), envia todos os dados armazenados no banco de dados em ordem crescente pelo "id". Já quarta rota ("/delete/:id"), é necessário que cada produto da listagem possua um botão de deletar no frontend, assim, ao clicar neste botão será enviado para o backend o id do produto a ser deletado. Por fim, a ultima rota ("/update/:id"), para que o usuário altere algum produto do banco, o frontend deve enviar pro backend o id e as informações que deseja alterar do produto.
+ A primeira rota ("/"), serve como teste para verificar se o servidor está rodando. Enquanto a segunda ("/insert") serve para inserir os dados no banco, informações essas passadar por um meio de um JSON enviado pelo frontend. A terceira rota ("/List"), envia todos os dados armazenados no banco de dados em ordem crescente pelo "id". Já quarta rota ("/delete/:id"), é necessário que cada produto da listagem possua um botão de deletar no frontend, assim, ao clicar neste botão será enviado para o backend o id do produto a ser deletado. Por fim, a ultima rota ("/update/:id"), para que o usuário altere algum produto do banco, o frontend deve enviar pro backend o id e as informações que deseja alterar do produto.
  
 # Como usar
  Primeiramente é necessário fazer o download do NodeJS.
