@@ -41,7 +41,7 @@ app.get("/delete/:id", function(req, res){
     })
 })
 
-app.post("/update:id", function(req, res){
+app.post("/update/:id", function(req, res){
     Produto.update({
         titulo: req.body.titulo,
         descricao: req.body.descricao,
