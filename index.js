@@ -26,6 +26,14 @@ app.get("/list", function(req, res){
     })
 })
 
+app.get("/delete/:id", function(req, res){
+    Produto.destroy({where: {"id": req.body.id}}).then(function(){
+        res.send("Produto excluído com sucesso.")
+    }).catch(function(erro){
+        res.send("Produto inexistente.")
+    })
+})
+
 app.listen(8181, function(){
     console.log("Servidor rodando na porta 8181.")
 })
