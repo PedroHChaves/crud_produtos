@@ -1,4 +1,5 @@
 const express = require("express")
+const { where } = require("sequelize/types")
 const app = express()
 
 const Produto = require("./models/Produto")
@@ -21,14 +22,37 @@ app.post("/insert", function(req, res){
 })
 
 app.get("/list", function(req, res){
-    Produto.all({order: [["id", "ASC"]]}).then(function(posts){
+    Produto.all({
+        order: [["id", "ASC"]]
+    }).then(function(posts){
         res.send(posts)
     })
 })
 
 app.get("/delete/:id", function(req, res){
-    Produto.destroy({where: {"id": req.body.id}}).then(function(){
+    Produto.destroy({
+        where: {
+            "id": req.params.id
+        }
+    }).then(function(){
         res.send("Produto excluído com sucesso.")
+    }).catch(function(erro){
+        res.send("Produto inexistente.")
+    })
+})
+
+app.post("/update:id", function(req, res){
+    Produto.update({
+        titulo: req.body.titulo,
+        descricao: req.body.descricao,
+        preco: parseFloat(req.body.preco),
+        categoria: req.body.categoria
+    }, {
+        where: {
+            id: req.params.id
+        }
+    }).then(function(){
+        res.send("Produto alterado com sucesso.")
     }).catch(function(erro){
         res.send("Produto inexistente.")
     })
